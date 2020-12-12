@@ -1,6 +1,6 @@
 from fastapi.middleware.cors import CORSMiddleware
 from db.user_db import UserInDB
-from db.user_db import update_user, get_user
+from db.user_db import update_user, get_user, create_user
 from db.transaction_db import TransactionInDB
 from db.transaction_db import save_transaction
 from models.user_models import UserIn, UserOut
@@ -29,6 +29,15 @@ async def auth_user(user_in: UserIn):
     if user_in_db.password != user_in.password:
         return {"Autenticado": False}
     return {"Autenticado": True}
+
+
+@api.post("/user/signup/")
+async def signup_user(new_user: UserInDB):
+    new_user_in_db = get_user(new_user.username)
+    if new_user_in_db != None:
+        raise HTTPException(status_code=404, detail="El usuario ya existe")
+    create_user(new_user)
+    return {"Registrado": True}
 
 
 @api.get("/user/budget/{username}")

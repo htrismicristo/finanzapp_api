@@ -30,6 +30,10 @@ def get_user(username: str):
         return None
 
 
+def create_user(new_user: UserInDB):
+    database_users[new_user.username] = new_user
+
+
 def update_user(user_in_db: UserInDB):
     database_users[user_in_db.username] = user_in_db
     return user_in_db

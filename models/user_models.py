@@ -8,4 +8,4 @@ class UserIn(BaseModel):
 
 class UserOut(BaseModel):
     username: str
-    password: str
+    budget: str

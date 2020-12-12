@@ -5,11 +5,11 @@ from datetime import datetime
 class TransactionIn(BaseModel):
     username: str
     value: int
+    category: str
 
 
 class TransactionOut(BaseModel):
     id_transaction: int
     username: str
     date: datetime
-    value: int
-    actual_balance: int
+    actual_budget: int

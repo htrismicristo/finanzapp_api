@@ -5,20 +5,20 @@ from pydantic import BaseModel
 class UserInDB(BaseModel):
     username: str
     password: str
-    balance: int
+    budget: int
 
 
 database_users = Dict[str, UserInDB]
 database_users = {
     "hermes23": UserInDB(**{"username": "hermes23",
-                            "password": "hjromero123",
-                            "balance": 20000}),
-    "camilo24": UserInDB(**{"username": "hermes23",
-                            "password": "hjromerop93",
-                            "balance": 12000}),
-    "andres18": UserInDB(**{"username": "andres18",
-                            "password": "hola",
-                            "balance": 34000}),
+                            "password": "hjromerop",
+                            "budget": 20000}),
+    "alison12": UserInDB(**{"username": "alison12",
+                            "password": "alicarom",
+                            "budget": 12000}),
+    "julio06": UserInDB(**{"username": "julio06",
+                           "password": "torresv",
+                           "budget": 34000}),
 }
 
 

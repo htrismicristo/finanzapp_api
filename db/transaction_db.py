@@ -7,7 +7,8 @@ class TransactionInDB(BaseModel):
     username: str
     date: datetime = datetime.now()
     value: int
-    actual_balance: int
+    actual_budget: int
+    category: str
 
 
 database_transactions = []

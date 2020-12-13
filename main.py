@@ -11,6 +11,8 @@ from fastapi import FastAPI
 from fastapi import HTTPException
 api = FastAPI()
 
+# Políticas CORS para autorizar orígenes de peticiones a mi capa lógica
+# Falta autorizar la capa de presentación desplegada en Heroku
 origins = [
     "http://localhost.tiangolo.com", "https://localhost.tiangolo.com",
     "http://localhost", "http://localhost:8080",

@@ -9,7 +9,10 @@ class TransactionIn(BaseModel):
 
 
 class TransactionOut(BaseModel):
-    id_transaction: int
+    id: int
     username: str
     date: datetime
     actual_budget: int
+
+    class Config:
+        orm_mode = True

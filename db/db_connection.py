@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 # Creando Motor y Conexion con la Base de Datos
-SQLALCHEMY_DATABASE_URL = "postgresql://postgres:ds4biz23@localhost:5432/MISION_TIC"
+SQLALCHEMY_DATABASE_URL = "postgresql://postgres:ds4biz23@ec2-52-6-75-198.compute-1.amazonaws.com:5432/MISION_TIC"
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
 # Creacion de la Sesión
